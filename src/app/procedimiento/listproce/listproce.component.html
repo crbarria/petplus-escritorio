@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    </section>
+</div>
+
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+        <!--Se agrega un nuevo procedimiento-->
+
+
+        <h1 class="destacado">Añadir un nuevo procedimiento</h1>
+
+        <br>
+        <br>
+
+        <form (ngSubmit)="onSubmit()">
+
+            <label for="nombre_procedimiento"> </label>
+            <input placeholder="Ingrese nombre del procedimiento" class="form-control" class="col-2" type="text"
+                id="nombre_procedimiento" required [(ngModel)]="model.nombre_procedimiento" name="nombre_procedimiento"
+                #nombre_procedimiento="ngModel" style="margin-right: 50px;" />
+
+
+                <div *ngIf="nombre_procedimiento.invalid">
+                    <br>
+                    <button class="boton_apagado" disabled>Añadir procedimiento</button>
+                </div>
+      
+
+
+            <div *ngIf="nombre_procedimiento.valid">
+                <br>
+                <button class="boton_guardar">Añadir procedimiento</button>
+            </div>
+
+
+
+        </form>
+
+        <br>
+        <br>
+        <section>
+
+       
+
+        </section>
+
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-dark" style="width:60%">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        Nombre procedimiento
+                    </th>
+                    <th>
+                        Eliminar
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let procedimientos of procelist">
+                    <td class="negritas">{{procedimientos.nombre_procedimiento}}</td>
+                    <td>
+                        <button (click)="eliminarproce(procedimientos)" class="btn boton-eliminar"
+                            type="button">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

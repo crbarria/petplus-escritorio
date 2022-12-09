@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    </section>
+</div>
+
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+        <!--Se agrega un nuevo procedimiento-->
+
+
+        <h1 class="destacado">Reserva de horas</h1>
+
+        <br>
+        <br>
+
+        <form >
+
+        <!-- Input de la hora seleccionada-->
+            <input class="form-control "  class="col-3" placeholder="Seleccione la hora que desea editar" type="text" id="nombre"
+            value={{hora}} name="nombre" style="margin-right: 50px; background-color: white;" disabled/>
+
+        <!--Option con el tipo de horas-->
+        <select class="options" name="estadohora" 
+        >
+        <option>Seleccione un estado de hora</option>
+        <option value={{tipos}} *ngFor="let tipos of estado_horas">
+
+          {{tipos}}
+        </option>
+      </select>
+
+      <!--Boton para guardar el cambio-->
+
+      
+    </form>
+
+        <br>
+        <br>   
+        <section>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Horas</th>
+                        <th scope="col">Estado de horas</th>
+
+        
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let horas of horaslist" >
+        
+        
+        
+                        <td class="negritas">{{horas.horas}}</td>
+
+
+                        <td class="negritas">{{horas.estado_hora}}</td>
+
+                        <br>
+                        <button (click)="unahora(horas)" class="boton_editar"> Editar </button>
+                        
+                        <button class="boton_guardar" (click)="modificarhora(horas)" >Modificar</button>
+        
+                </tbody>
+                
+             
+            </table>
+        </section>
+
+
+        
+    </div>
+
+
+</div>

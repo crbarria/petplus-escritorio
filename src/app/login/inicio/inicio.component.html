@@ -1,0 +1,41 @@
+<div id="login">
+    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+
+                <img src="../../../assets/image/Petplus icon.png" alt="" width="130px" height="130px"
+                    style="margin-left: 250px; ">
+
+                <div id="login-box" class="col-md-12">
+
+                    <br>
+                   
+                    
+
+                    <h4 style="text-align: center;">¡Bienvenid@ a petplus!</h4>
+                    <br>
+                    <div>
+                    <label style="text-align: center;">ID de empleado</label>
+                    <br>
+                    <input type="text"  class="form-control" [(ngModel)]="buscar_input"   placeholder="Ingrese su numero de empleado" />
+                    </div>
+                    <br>
+                    <label style="text-align: center;">Nombre de usuario</label>
+                    <br>
+                    <input type="text"  class="form-control" [(ngModel)]="usuario"   placeholder="Ingrese su nombre de usuario" />
+                    <br>
+                    <label style="text-align: center;">Contraseña</label>
+                    <br>
+                    <input type="password"  class="form-control" [(ngModel)]="contrasena"   placeholder="Ingrese su contraseña" />
+                    <br>
+                    <br>
+                    <button (click)="buscar()" class="btn iniciose" type="button" style="margin-left: 234px;">Iniciar sesión</button>
+           
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

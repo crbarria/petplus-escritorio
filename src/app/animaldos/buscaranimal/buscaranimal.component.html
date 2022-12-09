@@ -1,0 +1,222 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+  <section class="letra1">
+    <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center" alt=""
+      loading="lazy" style="margin-top: 100px;">
+    <br>
+    <br>
+    <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+  </section>
+</div>
+
+
+<!-- Page Content -->
+
+<div class="w3-container">
+
+  <div style="margin-left:15%">
+
+    <br>
+
+    <h1 class="destacado">Ingrese el numero de ficha del animal</h1>
+    <br>
+    <input [(ngModel)]="buscar_input2" type="text" name="" id="">
+    <button style="margin-left: 30px;" (click)="buscar()" class="btn btn-primary boton_guardar"
+      type="submit">Buscar</button>
+
+
+    <br>
+    <h1 class="destacado">Informacion del animal</h1>
+    <br>
+
+    <label class="destacado">Nombre del animal: {{nombreanimal}} </label>
+    <br>
+    <label class="destacado">Numero de microchip: {{n_microchip}} </label>
+    <br>
+    <label class="destacado">Especie: {{nombre_especie}} </label>
+    <br>
+    <label class="destacado">Fecha de nacimiento: {{fechanac}} </label>
+
+    <br>
+    <label class="destacado">Nombre del dueño: {{nombre_dueno}}</label>
+
+    <br>
+    <label class="destacado">Numero de telefono dueño: {{duenotelefono}}</label>
+    <br>
+    <label class="destacado">Correo electronico dueño: {{duenocorreo}}</label>
+
+
+    
+
+
+      <br>
+      <br>
+
+   
+    <br>
+
+    <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-dark" style="width:60%">
+      <thead>
+          <tr>
+              <th>
+                Segunda clave
+              </th>
+              <th>
+                Fecha de atención
+              </th>
+              <th>
+                Motivo de la consulta
+              </th>
+              <th>
+                Peso
+              </th>
+              <th>
+                Observacion
+              </th>
+              <th>
+                Eliminar
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let consuproce of segundalist">
+              <td>
+                {{consuproce.consulta_reserva_id_consulta_reserva_id}}
+              </td>
+              <td>
+                {{consuproce.fecha_pro}}
+              </td>
+              <td>
+                {{consuproce.motivo_consulta}}
+              </td>
+              <td>
+                {{consuproce.peso}}
+              </td>
+              <td>
+                {{consuproce.observaciones}}
+              </td>
+              <td>
+                <button (click)="eliminarproce(consuproce)" class="btn boton-eliminar"
+                type="button">Eliminar</button> 
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <br>
+  <br>
+
+
+      <h1 class="destacado">Consulta y procedimiento</h1>
+      <br>
+
+      <form (ngSubmit)="onSubmit4()">
+
+        <label for="fecha_pro"> </label>
+        <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text"
+          id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #fecha_pro="ngModel"
+          style="margin-right: 30px;" />
+  
+  
+        <label for="motivo_consulta"> </label>
+        <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
+          id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #motivo_consulta="ngModel"
+          style="margin-right: 30px;" />
+  
+        
+  
+        <label for="peso"> </label>
+        <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
+          required [(ngModel)]="model3.peso" name="peso" #name="ngModel" #peso="ngModel" /> KG
+
+          <br>
+          <br>
+          <br>
+
+        <label for="observaciones"> </label>
+        <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
+          id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #observaciones="ngModel" class="grande"
+           style="margin-right: 50px;" class="inputgrande"/>
+  
+        
+  
+        <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
+          <option>Seleccione el trabajador</option>
+          <option value={{emps.id_emp}} *ngFor="let emps of emplist">
+  
+            {{emps.nombre_empleado}}
+          </option>
+        </select>
+  
+        <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id" [(ngModel)]="model3.procedimiento_id_procedimiento_id"
+          (change)="cambiarproce($event)">
+          <option>Seleccione un procedimiento</option>
+          <option value={{proces.id_procedimiento}} *ngFor="let proces of procelist">
+  
+            {{proces.nombre_procedimiento}}
+          </option>
+        </select>
+  
+        <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+          <option>Seleccione su ficha</option>
+          <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
+  
+            {{consu.animal_id_animal_id}}
+          </option>
+        </select>
+  
+  
+        <br>
+        <br>
+  
+       
+      
+  
+        <div *ngIf="fecha_pro.valid && motivo_consulta.valid && peso.valid && observaciones.valid ">
+          <br>
+          <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+        </div>
+        <br>
+        <br>
+
+        <div *ngIf="!fecha_pro.valid && !motivo_consulta.valid   && !observaciones.valid ">
+          <button disabled class="btn btn-primary boton_guardar"> Guardar </button>
+        </div>
+
+        <br>
+        <br>
+        <br>
+  
+      </form>
+
+
+      <h1 class="destacado">Segunda clave</h1>
+      <br>
+     
+
+          <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+          <option>Seleccione su ficha</option>
+          <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
+  
+            {{consu.consulta_reserva_id_consulta_reserva_id}}
+          </option>
+        </select>
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+  </div>

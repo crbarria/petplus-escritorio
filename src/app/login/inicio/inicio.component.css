@@ -1,0 +1,30 @@
+#login .container #login-row #login-column #login-box {
+    margin-top: 50px;
+    max-width: 600px;
+    height: 450px;
+    border: 1px solid  #e0e8ed;
+    background-color: #e0e8ed;
+
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+
+  .botonpet{
+
+    color: #EAEAEA;
+    background-color: blue;
+
+  }
+
+  .iniciose{
+
+    background-color:  #18246e;
+    color: white;
+    
+    border-radius: 5px;
+    size: 10px;
+}

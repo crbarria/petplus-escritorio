@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    </section>
+</div>
+
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+        <form>
+            <h1 class="destacado">Añadir un nuevo empleado</h1>
+
+            <br>
+            <br>
+
+            <form (ngSubmit)="onSubmit()">
+
+                <label for="nombre_empleado"> </label>
+                <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
+                    id="nombre_empleado" required [(ngModel)]="model.nombre_empleado" name="nombre_empleado"
+                    #nombre_empleado="ngModel" style="margin-right: 50px;" />
+
+
+                <select style="margin-right: 30px;" class="options" name="tipo_emp" [(ngModel)]="model.tipo_emp">
+                    <option> Seleccione el cargo</option>
+                    <option value={{tipo}} *ngFor="let tipo of tipo_empleado">
+                        {{tipo}}
+                    </option>
+                </select>
+
+                <div *ngIf="nombre_empleado.invalid">
+                    <br>
+                    <button disabled class="boton_apagado">Añadir Empleado</button>
+                </div>
+
+
+
+                <div *ngIf="nombre_empleado.valid">
+                    <br>
+                    <button class="boton_guardar">Añadir Empleado</button>
+                </div>
+
+
+
+            </form>
+
+            <div>
+                <br>
+                <button (click)="ventanacrear()" class="boton_guardar">Crear un nuevo usuario</button>
+            </div>
+
+
+
+        </form>
+
+
+        <br>
+        <br>
+
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-dark" style="width:60%">
+            <thead>
+                <tr>
+                    <th>
+                      Segunda clave
+                    </th>
+                    <th>
+                      Fecha de atención
+                    </th>
+                    <th>
+                        Eliminar
+                    </th>
+                  
+                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emps of emplist">
+                    <td>
+                        {{emps.nombre_empleado}}
+                    </td>
+                    <td>
+                        {{emps.tipo_emp}}
+                    </td>
+                    <td>
+                        <button (click)="eliminaremp(emps)" class="btn boton-eliminar" type="button">Eliminar</button>
+                    </td>
+                  
+                
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+</div>
