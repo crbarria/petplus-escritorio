@@ -61,25 +61,25 @@
    
     <br>
 
-    <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-info" style="width:60%">
+    <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-light" style="width:60%">
       <thead>
           <tr>
-              <th>
+              <th class="colornuevo">
                 Segunda clave
               </th>
-              <th>
+              <th class="colornuevo">
                 Fecha de atención
               </th>
-              <th>
+              <th class="colornuevo">
                 Motivo de la consulta
               </th>
-              <th>
+              <th class="colornuevo">
                 Peso
               </th>
-              <th>
+              <th class="colornuevo">
                 Observacion
               </th>
-              <th>
+              <th class="colornuevo">
                 Eliminar
               </th>
           </tr>
@@ -113,110 +113,171 @@
   <br>
 
 
-      <h1 class="destacado">Consulta y procedimiento</h1>
-      <br>
-
-      <form (ngSubmit)="onSubmit4()">
-
-        <label for="fecha_pro"> </label>
-        <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text"
-          id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #fecha_pro="ngModel"
-          style="margin-right: 30px;" />
-  
-  
-        <label for="motivo_consulta"> </label>
-        <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
-          id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #motivo_consulta="ngModel"
-          style="margin-right: 30px;" />
-  
-        
-  
-        <label for="peso"> </label>
-        <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
-          required [(ngModel)]="model3.peso" name="peso" #name="ngModel" #peso="ngModel" /> KG
-
-          <br>
-          <br>
-          <br>
-
-        <label for="observaciones"> </label>
-        <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
-          id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #observaciones="ngModel" class="grande"
-           style="margin-right: 50px;" class="inputgrande"/>
-  
-        
-  
-        <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
-          <option>Seleccione el trabajador</option>
-          <option value={{emps.id_emp}} *ngFor="let emps of emplist">
-  
-            {{emps.nombre_empleado}}
-          </option>
-        </select>
-  
-        <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id" [(ngModel)]="model3.procedimiento_id_procedimiento_id"
-          (change)="cambiarproce($event)">
-          <option>Seleccione un procedimiento</option>
-          <option value={{proces.id_procedimiento}} *ngFor="let proces of procelist">
-  
-            {{proces.nombre_procedimiento}}
-          </option>
-        </select>
-  
-        <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
-          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
-          <option>Seleccione su ficha</option>
-          <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
-  
-            {{consu.animal_id_animal_id}}
-          </option>
-        </select>
-  
-  
-        <br>
-        <br>
-  
-       
-      
-  
-        <div *ngIf="fecha_pro.valid && motivo_consulta.valid && peso.valid && observaciones.valid ">
-          <br>
-          <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
-        </div>
-        <br>
-        <br>
-
-        <div *ngIf="!fecha_pro.valid && !motivo_consulta.valid   && !observaciones.valid ">
-          <button disabled class="btn btn-primary boton_guardar"> Guardar </button>
-        </div>
-
-        <br>
-        <br>
-        <br>
-  
-      </form>
-
-
-      <h1 class="destacado">Segunda clave</h1>
-      <br>
-     
-
-          <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
-          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
-          <option>Seleccione su ficha</option>
-          <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
-  
-            {{consu.consulta_reserva_id_consulta_reserva_id}}
-          </option>
-        </select>
+    
 
     </div>
 
 
     <br>
+   
     <br>
-    <br>
-    <br>
+
+    <section class="h-100 h-custom" >
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100" style="margin-left: 120px ">
+          <div class="col-lg-8 col-xl-6">
+            <div class="card rounded-3">
+              <div class="card-body p-4 p-md-5">
+    
+                <form class="px-md-2">
+    
+                  <div class="form-outline mb-4">
+                   
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Consulta y procedimiento</h3>
+
+                    <form (ngSubmit)="onSubmit4()">
+
+                      <label for="fecha_pro" class="labelsdesta">Seleccione la fecha de atención </label>
+                      <br>
+                      <br>
+                      <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-5" type="date"
+                        id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #fecha_pro="ngModel"
+                        style="margin-right: 30px;" />
+                      
+                        <br>
+                        <br>
+                
+                      <label for="motivo_consulta" class="labelsdesta"> Ingrese el motivo de la consulta </label>
+                      <br>
+                      <br>
+                      <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-8" type="text"
+                        id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #motivo_consulta="ngModel"
+                        style="margin-right: 30px;" />
+                
+                        <br>
+                        <br>
+
+                
+                      <label for="peso" class="labelsdesta">Ingrese el peso del animal </label>
+                      <br>
+                      <br>
+                      <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
+                        required [(ngModel)]="model3.peso" name="peso" #name="ngModel" #peso="ngModel" /> KG
+              
+                        <br>
+                        <br>
+                        <br>
+                      
+                      <label for="observaciones" class="labelsdesta">Ingrese las observaciones y diagnostico </label>
+                      <br>
+                      <br>
+                      <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
+                        id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #observaciones="ngModel" class="grande"
+                         style="margin-right: 50px;" class="inputgrande"/>
+                
+
+                      <br>
+                      <br>
+                      <label  class="labelsdesta">Despligue y seleccion quien atendio al animal</label>
+                      <br>
+                      <br>
+                      <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
+                        <option value="0">Seleccione el trabajador</option>
+                        <option value={{emps.id_emp}} *ngFor="let emps of emplist">
+                
+                          {{emps.nombre_empleado}}
+                        </option>
+                      </select>
+
+                      <br>
+                      <br>
+                      <label class="labelsdesta">Despligue y seleccione el procedimiento</label>
+                      <br>
+                      <br>
+                      <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id" [(ngModel)]="model3.procedimiento_id_procedimiento_id"
+                        (change)="cambiarproce($event)">
+                        <option value="0">Seleccione un procedimiento</option>
+                        <option value={{proces.id_procedimiento}} *ngFor="let proces of procelist">
+                
+                          {{proces.nombre_procedimiento}}
+                        </option>
+                      </select>
+                      
+
+                      <br>
+                      <br>
+                      <label class="labelsdesta">Despligue y seleccione la dicha del animal atendido</label>
+                      <br>
+                      <br>
+                      <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+                        [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+                        <option value="0">Seleccione su ficha</option>
+                        <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
+                
+                          {{consu.animal_id_animal_id}}
+                        </option>
+                      </select>
+                
+                
+                      <br>
+                      <br>
+                
+                     
+                    
+                
+                      <div *ngIf="fecha_pro.valid && motivo_consulta.valid && peso.valid && observaciones.valid ">
+                        <br>
+                        <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+                      </div>
+                      <br>
+                      <br>
+              
+                      <div *ngIf="!fecha_pro.valid && !motivo_consulta.valid   && !observaciones.valid ">
+                        <button disabled class="btn btn-primary boton_guardar"> Guardar </button>
+                      </div>
+              
+                      <br>
+                     
+                    </form>
+
+
+
+                  </div>
+                
+                  <h1>--------------------------------</h1>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4"> 
+
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Segunda clave</h3>
+
+
+    
+                      <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+                      [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+                      <option>Seleccione su ficha</option>
+                      <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
+              
+                        {{consu.consulta_reserva_id_consulta_reserva_id}}
+                      </option>
+                    </select>
+            
+                    </div>
+              
+                  </div>
+    
+    
+        
+    
+    
+                </form>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
   </div>

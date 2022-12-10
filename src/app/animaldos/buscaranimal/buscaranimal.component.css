@@ -60,3 +60,25 @@
     background-color: red;
     color: white;
 }
+
+
+
+.colornuevo{
+
+    background-color: #8fc4b7;
+}
+
+
+.labelsdesta{
+    font-weight: bold;
+    color: #18246e;
+}
+
+
+
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100% !important;
+    }
+    }

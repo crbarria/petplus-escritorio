@@ -33,10 +33,10 @@
                 <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
                     id="nombre_empleado" required [(ngModel)]="model.nombre_empleado" name="nombre_empleado"
                     #nombre_empleado="ngModel" style="margin-right: 50px;" />
-
+                
 
                 <select style="margin-right: 30px;" class="options" name="tipo_emp" [(ngModel)]="model.tipo_emp">
-                    <option> Seleccione el cargo</option>
+                    <option value="Seleccione el cargo"> Seleccione el cargo</option>
                     <option value={{tipo}} *ngFor="let tipo of tipo_empleado">
                         {{tipo}}
                     </option>
@@ -71,16 +71,16 @@
         <br>
         <br>
 
-        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-info" style="width:60%">
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-light" style="width:60%">
             <thead>
                 <tr>
-                    <th>
-                      Segunda clave
+                    <th class="colornuevo">
+                      Nombre del empleado
                     </th>
-                    <th>
-                      Fecha de atención
+                    <th class="colornuevo">
+                      Tipo de empleado
                     </th>
-                    <th>
+                    <th class="colornuevo">
                         Eliminar
                     </th>
                   
