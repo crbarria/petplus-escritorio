@@ -11,7 +11,7 @@
     <br>
     <br>
     <h1 class="letra1">¡Bienvenido Usuari@!</h1>
-    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENÚ PRINCIPAL</a>
   </section>
 </div>
 
@@ -32,24 +32,43 @@
 
 
     <br>
-    <h1 class="destacado">Informacion del animal</h1>
+    <br>
+    <br>
+    <h1 class="destacado">Información del animal</h1>
     <br>
 
-    <label class="destacado">Nombre del animal: {{nombreanimal}} </label>
-    <br>
-    <label class="destacado">Numero de microchip: {{n_microchip}} </label>
-    <br>
-    <label class="destacado">Especie: {{nombre_especie}} </label>
-    <br>
-    <label class="destacado">Fecha de nacimiento: {{fechanac}} </label>
 
-    <br>
-    <label class="destacado">Nombre del dueño: {{nombre_dueno}}</label>
+    <div style="background-color: #c2e3db;"  class="centrodiv">
+      <br>
+      <br>
 
+    <div style="margin-left: 50px;">
+
+    <label class="destacado1">Nombre del animal: {{nombreanimal}} </label>
     <br>
-    <label class="destacado">Numero de telefono dueño: {{duenotelefono}}</label>
     <br>
-    <label class="destacado">Correo electronico dueño: {{duenocorreo}}</label>
+    <label class="destacado1">Numero de microchip: {{n_microchip}} </label>
+    <br>
+    <br>
+    <label class="destacado1">Especie: {{nombre_especie}} </label>
+    <br>
+     <br>
+    <label class="destacado1">Fecha de nacimiento: {{fechanac}} </label>
+    <br>
+    <br>
+    <label class="destacado1">Nombre del dueño: {{nombre_dueno}}</label>
+    <br>
+    <br>
+    <label class="destacado1">Numero de telefono dueño: {{duenotelefono}}</label>
+    <br>
+    <br>
+    <label class="destacado1">Correo electronico dueño: {{duenocorreo}}</label>
+    <br>
+    <br>
+    <br>
+        </div>
+
+  </div>
 
 
     
@@ -60,6 +79,13 @@
 
    
     <br>
+
+
+    <h1 class="destacado">Listado con procedimientos anteriores</h1>
+
+    <br>
+    <br>
+
 
     <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-light" style="width:60%">
       <thead>
@@ -118,22 +144,20 @@
     </div>
 
 
-    <br>
-   
-    <br>
+ 
 
     <section class="h-100 h-custom" >
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100" style="margin-left: 120px ">
           <div class="col-lg-8 col-xl-6">
-            <div class="card rounded-3">
-              <div class="card-body p-4 p-md-5">
+            <div class="card rounded-3" style="border-color: #023300;">
+              <div class="card-body p-4 p-md-5" style="border-color: #a4eba1;">
     
                 <form class="px-md-2">
     
                   <div class="form-outline mb-4">
                    
-                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Consulta y procedimiento</h3>
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado"> Añadir consulta y procedimiento</h3>
 
                     <form (ngSubmit)="onSubmit4()">
 
@@ -178,7 +202,7 @@
 
                       <br>
                       <br>
-                      <label  class="labelsdesta">Despligue y seleccion quien atendio al animal</label>
+                      <label  class="labelsdesta">Despliegue  y seleccione quien atendio al animal</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
@@ -191,7 +215,7 @@
 
                       <br>
                       <br>
-                      <label class="labelsdesta">Despligue y seleccione el procedimiento</label>
+                      <label class="labelsdesta">Despliegue  y seleccione el procedimiento</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id" [(ngModel)]="model3.procedimiento_id_procedimiento_id"
@@ -206,7 +230,7 @@
 
                       <br>
                       <br>
-                      <label class="labelsdesta">Despligue y seleccione la dicha del animal atendido</label>
+                      <label class="labelsdesta">Despliegue  y seleccione la ficha del animal atendido</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
@@ -247,9 +271,10 @@
                   <h1>--------------------------------</h1>
 
                   <div class="row">
-                    <div class="col-md-6 mb-4"> 
+                    <div class="col-md-11 mb-4"> 
 
-                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Segunda clave</h3>
+                      <h3 class="mb-3 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Segunda clave (¡La segunda clave generada siempre sera la ultima!)</h3>
+
 
 
     

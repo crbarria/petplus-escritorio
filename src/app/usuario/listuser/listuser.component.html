@@ -9,7 +9,7 @@
         <br>
         <br>
         <h1 class="letra1">¡Bienvenido Usuari@!</h1>
-        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENÚ PRINCIPAL</a>
 
 
         <button type="button" (click)="retroceder()"
@@ -34,7 +34,7 @@
 
             <select style="margin-right: 30px;" class="options" name="emp_id_emp_id" [(ngModel)]="model.emp_id_emp_id"
                 (change)="cambiaremp($event)">
-                <option>Seleccione el trabajador</option>
+                <option value="0">Seleccione el trabajador</option>
                 <option value={{emps.id_emp}} *ngFor="let emps of emplist">
 
                     {{emps.nombre_empleado}}

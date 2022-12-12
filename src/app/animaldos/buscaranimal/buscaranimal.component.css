@@ -3,7 +3,7 @@
 }
 
 .letra1{
-    color: white;
+    color: #18246e;
     font-weight: bold;
 }
 
@@ -14,8 +14,8 @@
 .boton_menu{
     margin-top: 20px;
     margin-left: 15px;
-    color:  #7ed957;
-    background-color: white;
+    background-color:  #18246e;
+    color: white;
     font-weight: bold;
 }
 
@@ -74,11 +74,26 @@
     color: #18246e;
 }
 
+.destacado1{
+    color: black;
+    font-weight: bold;
 
+
+
+}
+.centrodiv{
+    margin-left: 400px;
+    margin-right: 400px;
+    border-radius: 20px;
+
+    
+}
 
 
 @media (min-width: 1025px) {
     .h-custom {
     height: 100% !important;
+
+    
     }
     }

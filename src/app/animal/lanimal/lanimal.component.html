@@ -9,7 +9,7 @@
     <br>
     <br>
     <h1 class="letra1">¡Bienvenido Usuari@!</h1>
-    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENÚ PRINCIPAL</a>
   </section>
 </div>
 
@@ -31,7 +31,7 @@
               <img src="https://veterinariasanjose.es/wp-content/uploads/revslider/vet/clinica-veterinaria-en-lorca.jpg"
                 class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
               <div class="card-body p-4 p-md-5">
-                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Registre los datos del dueño</h3>
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">1- Registre los datos del dueño</h3>
 
                 <form class="px-md-2">
 
@@ -80,7 +80,7 @@
 
                       <div class="form-outline datepicker">
 
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Registre los datos del animal</h3>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">2- Registre los datos del animal</h3>
 
 
                         <form (ngSubmit)="onSubmit2()">
@@ -99,7 +99,7 @@
                           <br>
                           <br>
 
-                          <label class="destacado">Despligue y seleccione al dueño del animal</label>
+                          <label class="destacado">Despliegue y seleccione al dueño del animal</label>
                           <br>
                           <br>
                           <select style="margin-right: 50px;" class="options" name="dueno_id_dueno_id"
@@ -115,7 +115,7 @@
                           <br>
                           <br>
 
-                          <label class="destacado">Despligue y seleccione el color del animal</label>
+                          <label class="destacado">Despliegue y seleccione el color del animal</label>
                           <br>
                           <br>
                           <select class="options" name="color_id_color_id" [(ngModel)]="model1.color_id_color_id"
@@ -129,7 +129,7 @@
 
                           <br>
                           <br>
-                          <label class="destacado">Despligue y seleccione la especie del animal</label>
+                          <label class="destacado">Despliegue y seleccione la especie del animal</label>
                           <br>
                           <br>
                           <select style="margin-right: 30px;" class="options" name="especie_id_especie_id"
@@ -177,7 +177,9 @@
                           <br>
                           <br>
 
-                          <label class="destacado" for="tipo_sangre">Ingrese el tipo de sangre (En caso de no saber ingrese "Desconocido")</label>
+                          <label class="destacado" for="tipo_sangre">Ingrese el tipo de sangre (Opcional)</label>
+                          <br>
+                          <br>
                           <input class="form-control" class="col-7" placeholder="Ingrese el tipo de sangre del animal"
                             type="text" id="tipo_sangre" required [(ngModel)]="model1.tipo_sangre" name="tipo_sangre"
                             required #tipo_sangre="ngModel" />
@@ -193,12 +195,12 @@
                           <br>
                           <br>
 
-                          <div *ngIf="!nombre.valid &&  !n_microchip.valid && !tipo_sangre.valid && !fecha_nac.valid">
+                          <div *ngIf="!nombre.valid &&  !n_microchip.valid  && !fecha_nac.valid">
                             <button class="btn btn-primary boton_guardar" disabled>Guardar</button>
                           </div>
 
 
-                          <div *ngIf="nombre.valid &&  n_microchip.valid && tipo_sangre.valid && fecha_nac.valid">
+                          <div *ngIf="nombre.valid &&  n_microchip.valid  && fecha_nac.valid">
                             <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
                           </div>
 
@@ -217,9 +219,9 @@
 
                     <form (ngSubmit)="onSubmit3()">
 
-                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Creacion de la ficha</h3>
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">3- Creacion de la ficha</h3>
 
-                      <label class="destacado">Despligue y seleccione la hora de creacion de la ficha</label>
+                      <label class="destacado">Despliegue y seleccione la hora de creación de la ficha</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;" class="options" name="reserva_horas_id_reserva_horas_id"
@@ -234,7 +236,7 @@
 
                       <br>
                       <br>
-                      <label class="destacado">Despligue y seleccione al animal registrado</label>
+                      <label class="destacado">Despliegue y seleccione al animal registrado</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;" class="options" name="animal_id_animal_id"
@@ -277,10 +279,11 @@
 
 
                   <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
-                    <div class="col-md-6">
+                    <div class="col-md-15">
 
 
-                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Fichas creadas</h3>
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">4- Fichas creadas (¡La ficha creada siempre sera la ultima!)</h3>
+
 
 
                       <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"

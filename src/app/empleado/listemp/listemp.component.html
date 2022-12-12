@@ -9,7 +9,7 @@
         <br>
         <br>
         <h1 class="letra1">¡Bienvenido Usuari@!</h1>
-        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENÚ PRINCIPAL</a>
     </section>
 </div>
 
@@ -34,9 +34,9 @@
                     id="nombre_empleado" required [(ngModel)]="model.nombre_empleado" name="nombre_empleado"
                     #nombre_empleado="ngModel" style="margin-right: 50px;" />
                 
-
+                
                 <select style="margin-right: 30px;" class="options" name="tipo_emp" [(ngModel)]="model.tipo_emp">
-                    <option value="Seleccione el cargo"> Seleccione el cargo</option>
+                    <option value="">Seleccione el tipo de empleado</option>
                     <option value={{tipo}} *ngFor="let tipo of tipo_empleado">
                         {{tipo}}
                     </option>
