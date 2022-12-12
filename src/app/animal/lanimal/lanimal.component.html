@@ -92,7 +92,7 @@
                           <br>
                           <br>
                           <label for="n_microchip"> </label>
-                          <input class="form-control" class="col-10" placeholder="Ingrese el numero de microchip"
+                          <input class="form-control" class="col-10" placeholder="Ingrese el número de microchip"
                             type="text" id="n_microchip" required [(ngModel)]="model1.n_microchip" name="n_microchip"
                             style="margin-right: 30px;" #n_microchip="ngModel" />
 
@@ -160,13 +160,13 @@
                           <br>
                           <br>
 
-                          <label class="destacado">Despligue y seleccione el genero del animal</label>
+                          <label class="destacado">Despligue y seleccione el género del animal</label>
                           <br>
                           <br>
 
                           <select class="options" name="sexo_id_sexo_id" [(ngModel)]="model1.sexo_id_sexo_id"
                             (change)="cambiarsexo($event)" required #sexo_id_sexo_id="ngModel">
-                            <option value="0">Seleccione el genero</option>
+                            <option value="0">Seleccione el género</option>
                             <option value={{sexos.id_sexo}} *ngFor="let sexos of sexolist">
 
                               {{sexos.sexo}}
@@ -219,7 +219,7 @@
 
                     <form (ngSubmit)="onSubmit3()">
 
-                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">3- Creacion de la ficha</h3>
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">3- Creación de la ficha</h3>
 
                       <label class="destacado">Despliegue y seleccione la hora de creación de la ficha</label>
                       <br>
@@ -227,7 +227,7 @@
                       <select style="margin-right: 30px;" class="options" name="reserva_horas_id_reserva_horas_id"
                         [(ngModel)]="model2.reserva_horas_id_reserva_horas_id" (change)="cambiarhora($event)" required
                         #reserva_horas_id_reserva_horas_id="ngModel">
-                        <option value="0">Seleccione la hora de creacion de la ficha</option>
+                        <option value="0">Seleccione la hora de creación de la ficha</option>
                         <option value={{horas.id_reserva_horas}} *ngFor="let horas of horaslist">
 
                           {{horas.horas}}
@@ -251,7 +251,7 @@
                       <br>
                       <br>
 
-                      <label class="destacado">Ingrese el dia de creación de la ficha</label>
+                      <label class="destacado">Ingrese el día de creación de la ficha</label>
                       <br>
                       <br>
                       <label for="fecha"> </label>
@@ -282,13 +282,13 @@
                     <div class="col-md-15">
 
 
-                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">4- Fichas creadas (¡La ficha creada siempre sera la ultima!)</h3>
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">4- Fichas creadas (¡La ficha creada siempre será la ultimá!)</h3>
 
 
 
                       <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
                         [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
-                        <option>Seleccione su ficha</option>
+                        <option value="0">Busque la ficha recién creada</option>
                         <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
 
                           {{consu.animal_id_animal_id}}

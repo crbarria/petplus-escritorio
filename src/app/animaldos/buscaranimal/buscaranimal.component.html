@@ -24,9 +24,9 @@
 
     <br>
 
-    <h1 class="destacado">Ingrese el numero de ficha del animal</h1>
+    <h1 class="destacado">Ingrese el número de ficha del animal</h1>
     <br>
-    <input [(ngModel)]="buscar_input2" type="text" name="" id="">
+    <input [(ngModel)]="buscar_input2" placeholder="Ingrese el número de ficha" type="text" name="" id="">
     <button style="margin-left: 30px;" (click)="buscar()" class="btn btn-primary boton_guardar"
       type="submit">Buscar</button>
 
@@ -47,7 +47,7 @@
     <label class="destacado1">Nombre del animal: {{nombreanimal}} </label>
     <br>
     <br>
-    <label class="destacado1">Numero de microchip: {{n_microchip}} </label>
+    <label class="destacado1">Número de microchip: {{n_microchip}} </label>
     <br>
     <br>
     <label class="destacado1">Especie: {{nombre_especie}} </label>
@@ -59,10 +59,10 @@
     <label class="destacado1">Nombre del dueño: {{nombre_dueno}}</label>
     <br>
     <br>
-    <label class="destacado1">Numero de telefono dueño: {{duenotelefono}}</label>
+    <label class="destacado1">Número de teléfono dueño: {{duenotelefono}}</label>
     <br>
     <br>
-    <label class="destacado1">Correo electronico dueño: {{duenocorreo}}</label>
+    <label class="destacado1">Correo electrónico dueño: {{duenocorreo}}</label>
     <br>
     <br>
     <br>
@@ -192,7 +192,7 @@
                         <br>
                         <br>
                       
-                      <label for="observaciones" class="labelsdesta">Ingrese las observaciones y diagnostico </label>
+                      <label for="observaciones" class="labelsdesta">Ingrese las observaciones y diagnóstico </label>
                       <br>
                       <br>
                       <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
@@ -202,7 +202,7 @@
 
                       <br>
                       <br>
-                      <label  class="labelsdesta">Despliegue  y seleccione quien atendio al animal</label>
+                      <label  class="labelsdesta">Despliegue  y seleccione quien atendió al animal</label>
                       <br>
                       <br>
                       <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
@@ -273,14 +273,14 @@
                   <div class="row">
                     <div class="col-md-11 mb-4"> 
 
-                      <h3 class="mb-3 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Segunda clave (¡La segunda clave generada siempre sera la ultima!)</h3>
+                      <h3 class="mb-3 pb-2 pb-md-0 mb-md-5 px-md-2 destacado">Segunda clave (¡La segunda clave generada siempre será la ultimá!)</h3>
 
 
 
     
                       <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
                       [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
-                      <option>Seleccione su ficha</option>
+                      <option value="0">Busque la segunda clave</option>
                       <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
               
                         {{consu.consulta_reserva_id_consulta_reserva_id}}
